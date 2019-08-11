@@ -3,7 +3,7 @@ import os
 
 
 class Config:
-    ENV_NAME = "CartPole-v1"
+    ENV_NAME = "MineRLTreechop-v0"
     GAMMA = 0.99  # discount factor for target Q
     INITIAL_EPSILON = 1.0  # starting value of epsilon
     FINAL_EPSILON = 0.01  # final value of epsilon
@@ -17,11 +17,12 @@ class Config:
     PRETRAIN_STEPS = 5000  # 750000
     MODEL_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'model/DQfD_model')
     DEMO_DATA_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'demo.p')
+    MINERL_DATA_PATH = "/home/vincent/repos/minerl/dataset/"
 
-    demo_buffer_size = 500 * 50
+    demo_buffer_size = 500 * 500
     replay_buffer_size = demo_buffer_size * 2
     iteration = 5
-    episode = 300  # 300 games per iteration
+    episode = 300  # num games per iteration
     trajectory_n = 10  # for n-step TD-loss (both demo data and generated data)
 
 
